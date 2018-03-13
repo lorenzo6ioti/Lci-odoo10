@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="myreport_cours" inherit_id="ecole.report_cours_doc">
+      <p name="pnbp" position="after">
+        <h3>Lieu</h3>
+        <p><span t-field="doc.lieu"/></p>
+      </p>
+
+    </template>
+  </data>
+</odoo>

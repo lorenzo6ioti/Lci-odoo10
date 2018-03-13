@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<template id="myreport_eleve" inherit_id="ecole.report_eleve_doc">
+<p name="psection" position="after">
+
+  <h3>Crédits</h3>
+
+  <div class="col-xs-3">
+    <strong>Nombre de crédits validés</strong>
+    <p><span t-field="doc.nbCredObt"/></p>
+  </div>
+
+  <div class="col-xs-3">
+    <strong>Nombre de crédits du cursus</strong>
+    <p><span t-field="doc.nbCredTot"/></p>
+  </div>
+
+  <div class="col-xs-3">
+    <strong>Nombre de crédits restants</strong>
+    <p><span t-field="doc.nbCredRest"/></p>
+  </div>
+
+</p>
+<p name="pAge" position="after">
+<h3>Possession d'une voiture</h3>
+  <p t-if="doc.voiture == True">Oui, l'élève possède une voiture</p>
+  <p t-if="doc.voiture == False">Non, l'élève ne possède pas de voiture</p>
+</p>
+</template>
+  </data>
+</odoo>
