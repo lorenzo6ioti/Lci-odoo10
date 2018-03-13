@@ -1,0 +1,15 @@
+-r requirements-find-links.txt
+
+# odoo
+-r https://raw.githubusercontent.com/odoo/odoo/10.0/requirements.txt
+-e git+https://github.com/resultrum/odoo.git@10.0-lci_master#egg=odoo
+
+# patched ACSONE addons
+# ...
+
+# patched OCA addons
+# -e git+https://github.com/acsone/{oca-project}.git@10.0-lci_master#egg=odoo{short_version}-addon-{addon}&subdirectory=setup/{addon}
+-e git+ssh:git@github.com:lorenzo6ioti/ecole-odoo10.git@10.0-lci_master#egg=odoo10-addon-ecole&subdirectory=setup/ecole
+
+# local project
+-e .

@@ -1,0 +1,14 @@
+./src/odoo:
+    remotes:
+        odoo: https://github.com/odoo/odoo.git
+        origin: ssh://git@github.com/resultrum/odoo.git
+    merges:
+        - odoo 10.0
+        - origin 10.0-with-setup
+    target: origin 10.0-lci_master
+./src/odoo10-addon-ecole:
+    remotes:
+        origin: git@github.com:lorenzo6ioti/ecole-odoo10.git 
+    merges:
+        - origin 10.0
+    target: origin 10.0-lci_master
