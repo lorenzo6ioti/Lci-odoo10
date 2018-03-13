@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 lorenzo6ioti
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+<data>
+    <record model="ir.ui.view" id="section_form_view">
+        <field name="name">section.form (in lci_ecole)</field>
+        <field name="model">ecole.section</field>
+        <field name="inherit_id" ref="ecole.section_form_view"/>
+        <field name="arch" type="xml">
+          <field name="name" position="after">
+            <field name="description"/>
+          </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="section_search_view">
+        <field name="name">section.search (in lci_ecole)</field>
+        <field name="model">ecole.section</field>
+        <field name="inherit_id" ref="ecole.section_search_view"/>
+        <field name="arch" type="xml">
+          <field name="name" position="after">
+            <field name="description"/>
+          </field>
+        </field>
+    </record>
+<!--
+    <record model="ir.ui.view" id="section_tree_view">
+        <field name="name">section.tree (in lci_ecole)</field>
+        <field name="model">section</field>
+        <field name="inherit_id" ref="ecole.tree_view"/>
+        <field name="arch" type="xml">
+
+        </field>
+    </record>
+  -->
+    <record model="ir.actions.act_window" id="section_act_window">
+        <field name="name">Section</field>
+        <field name="res_model">ecole.section</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="section_menu">
+        <field name="name">Section</field>
+        <field name="parent_id" ref="ecole.ecole_menu"/>
+        <field name="action" ref="section_act_window"/>
+        <!--<field name="sequence" eval="16"/>-->
+    </record>
+</data>
+</odoo>

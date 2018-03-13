@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 lorenzo6ioti
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+<data>
+    <record model="ir.ui.view" id="eleve_form_view">
+        <field name="name">eleve.form (in lci_ecole)</field>
+        <field name="model">ecole.eleve</field>
+        <field name="inherit_id" ref="ecole.eleve_form_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="prenom" position="replace">
+              <field name="surname"/>
+            </field>
+            <field name="age" position="after">
+              <field name="voiture"/>
+            </field>
+            <xpath expr="//group[@name='group_infos_eleve']" position="after">
+                <group>
+                <field name="nbCredObt"/>
+                <field name="nbCredRest"/>
+                <field name="nbCredTot"/>
+              </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="eleve_search_view">
+        <field name="name">eleve.search (in lci_ecole)</field>
+        <field name="model">ecole.eleve</field>
+        <field name="inherit_id" ref="ecole.eleve_search_view"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+              <field name="surname"/>
+            </field>
+        </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="eleve_act_window">
+        <field name="name">Eleve</field> <!-- TODO -->
+        <field name="res_model">ecole.eleve</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="eleve_menu">
+        <field name="name">Eleve</field>
+        <field name="parent_id" ref="ecole.ecole_menu"/> <!-- TODO -->
+        <field name="action" ref="eleve_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+</data>
+</odoo>

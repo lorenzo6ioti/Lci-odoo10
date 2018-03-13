@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<template id="myreport_prof" inherit_id="ecole.report_prof_doc">
+<p name="psection" position="after">
+<h3>Salaire</h3>
+<div class="col-xs-3">
+  <strong>Salaire par jour</strong>
+  <p><span t-field="doc.salaireHoraire"/></p>
+</div>
+<div class="col-xs-3">
+  <strong>Nombre d'heure par jour</strong>
+  <p><span t-field="doc.nbHeureJour"/></p>
+</div>
+<div class="col-xs-3">
+  <strong>Salaire mensuel</strong>
+  <p><span t-field="doc.salaire"/></p>
+</div>
+</p>
+
+</template>
+  </data>
+</odoo>

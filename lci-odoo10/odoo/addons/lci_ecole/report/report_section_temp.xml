@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<template id="myreport_section" inherit_id="ecole.report_section_doc">
+  <p name="psection" position="after">
+    <h3>Description de la section</h3>
+    <p><span t-field="doc.description"/></p>
+
+  </p>
+
+</template>
+  </data>
+</odoo>

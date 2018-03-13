@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 lorenzo6ioti
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+<data>
+    <record model="ir.ui.view" id="cours_form_view">
+        <field name="name">cours.form (in lci_ecole)</field>
+        <field name="model">ecole.cours</field>
+        <field name="inherit_id" ref="ecole.cours_form_view"/>
+        <field name="arch" type="xml">
+            <field name="nbEleves" position="before">
+                <field name="lieu"/>
+            </field>
+            <field name="titulaire_id" position="attributes">
+              <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cours_search_view">
+        <field name="name">cours.search (in lci_ecole)</field>
+        <field name="model">ecole.cours</field>
+        <field name="inherit_id" ref="ecole.cours_search_view"/>
+        <field name="arch" type="xml">
+          <field name="name" position="after">
+            <field name="lieu"/>
+          </field>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="cours_act_window">
+        <field name="name">Cours</field> <!-- TODO -->
+        <field name="res_model">ecole.cours</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="cours_menu">
+        <field name="name">Cours</field>
+        <field name="parent_id" ref="ecole.ecole_menu"/>
+        <field name="action" ref="cours_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+</data>
+</odoo>
